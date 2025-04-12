@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+    <sim>
+        <description>Solar Impulse Camera</description>
+        <view n="100">
+            <name>Solar Impulse Chase View</name>
+            <default-field-of-view-deg type="double">65.0</default-field-of-view-deg>
+        </view>
+    </sim>
+</PropertyList>

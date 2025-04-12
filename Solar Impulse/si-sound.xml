@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+ <fx>
+  <engine>
+   <name>electric_motor</name>
+   <mode>looped</mode>
+   <path>Sounds/electric-motor.wav</path>
+   <volume>
+    <property>/engines/engine[0]/rpm</property>
+    <factor>0.0005</factor>
+   </volume>
+   <pitch>
+    <property>/engines/engine[0]/rpm</property>
+    <factor>0.001</factor>
+   </pitch>
+  </engine>
+ </fx>
+</PropertyList>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+    <sim>
+        <description>Solar Impulse</description>
+        <author>Your Name</author>
+        
+        <flight-model>jsb</flight-model> <!-- Using JSBSim for better flight dynamics -->
+
+        <model>
+            <path>Aircraft/solar-impulse/Models/solar-impulse.xml</path>
+        </model>
+
+        <performance>
+            <cruise>
+                <airspeed-knots type="int">45</airspeed-knots> <!-- Very slow cruise speed -->
+                <altitude-ft type="int">28000</altitude-ft> <!-- High altitude capability -->
+            </cruise>
+            <approach>
+                <airspeed-knots type="int">35</airspeed-knots> <!-- Very slow approach -->
+            </approach>
+        </performance>
+
+        <!-- Electrical systems for solar aircraft -->
+        <systems>
+            <electrical>
+                <bus>
+                    <voltage type="double">400.0</voltage> <!-- High voltage system -->
+                    <battery>
+                        <capacity type="double">20000</capacity> <!-- Large battery capacity -->
+                    </battery>
+                </bus>
+            </electrical>
+            <solar>
+                <efficiency type="double">0.22</efficiency> <!-- Solar cell efficiency -->
+                <area type="double">200</area> <!-- Square meters -->
+            </solar>
+        </systems>
+    </sim>
+</PropertyList>
