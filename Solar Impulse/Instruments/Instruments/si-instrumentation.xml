@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<PropertyList>
+    <!-- Instruments de base conservés -->
+    <airspeed-indicator>
+        <name>airspeed-indicator</name>
+        <number>0</number>
+        <max-speed>80</max-speed> <!-- Vitesse max réduite pour Solar Impulse -->
+    </airspeed-indicator>
+
+    <!-- Ajout d'instruments spécifiques -->
+    <solar-system>
+        <name>solar-monitor</name>
+        <number>0</number>
+        <battery-level>/systems/battery/level</battery-level>
+        <solar-power>/systems/solar/power</solar-power>
+    </solar-system>
+
+    <!-- Retrait des instruments non nécessaires -->
+    <!--
+    <tacan>
+        <name>tacan</name>
+        <number>0</number>
+        <serviceable>false</serviceable>
+    </tacan>
+    -->
+</PropertyList>

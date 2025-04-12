@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+    <name>SolarImpulse-Panel</name>
+    <background>Aircraft/solar-impulse/Panel/background.rgb</background>
+    <w>1024</w>
+    <h>768</h>
+
+    <instruments>
+        <!-- EHSI modifié -->
+        <instrument include="ehsi.xml">
+            <name>ehsi</name>
+            <x>50</x>
+            <y>50</y>
+        </instrument>
+
+        <!-- Nouvel instrument de monitoring solaire -->
+        <instrument>
+            <name>solar-monitor</name>
+            <type>text</type>
+            <x>700</x>
+            <y>50</y>
+            <w>200</w>
+            <h>100</h>
+            <font>helvetica_bold</font>
+            <point-size>12</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.0</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>text</type>
+                    <text>SOLAR SYSTEM\n</text>
+                </chunk>
+                <chunk>
+                    <type>text</type>
+                    <text>Power: </text>
+                </chunk>
+                <chunk>
+                    <type>number-value</type>
+                    <property>/systems/solar/power</property>
+                    <format>%.0f W\n</format>
+                </chunk>
+                <chunk>
+                    <type>text</type>
+                    <text>Battery: </text>
+                </chunk>
+                <chunk>
+                    <type>number-value</type>
+                    <property>/systems/battery/level</property>
+                    <format>%.1f%%</format>
+                </chunk>
+            </chunks>
+        </instrument>
+    </instruments>
+</PropertyList>

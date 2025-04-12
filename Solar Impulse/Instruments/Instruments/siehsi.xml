@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!-- EHSI adapté pour le Solar Impulse -->
+
+<PropertyList>
+    <name>SolarImpulse-EHSI</name>
+    <w-base>300</w-base>
+    <h-base>300</h-base>
+
+    <!-- Couleur modifiée pour un thème plus "écologique" -->
+    <color>
+        <red>0.2</red>
+        <green>0.8</green>
+        <blue>0.4</blue>
+    </color>
+
+    <!-- Ajout d'indicateurs solaires -->
+    <layer>
+        <name>solar-data</name>
+        <type>text</type>
+        <font>helvetica_bold</font>
+        <point-size>10</point-size>
+        <color>
+            <red>1.0</red>
+            <green>0.8</green>
+            <blue>0.2</blue>
+        </color>
+        <chunks>
+            <chunk>
+                <type>text</type>
+                <text>Solar: </text>
+            </chunk>
+            <chunk>
+                <type>number-value</type>
+                <property>/systems/solar/power</property>
+                <format>%.0f W</format>
+            </chunk>
+        </chunks>
+        <transformations>
+            <transformation>
+                <type>x-shift</type>
+                <offset>-120</offset>
+            </transformation>
+            <transformation>
+                <type>y-shift</type>
+                <offset>-120</offset>
+            </transformation>
+        </transformations>
+    </layer>
+</PropertyList>
