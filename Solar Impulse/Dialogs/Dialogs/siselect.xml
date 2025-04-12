@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+    <name>solar-impulse-select</name>
+    <!-- Liste des modèles spécifiques au Solar Impulse -->
+    <list>
+        <value>Solar Impulse HB-SIA</value>
+        <value>Solar Impulse HB-SIB</value>
+    </list>
+</PropertyList>

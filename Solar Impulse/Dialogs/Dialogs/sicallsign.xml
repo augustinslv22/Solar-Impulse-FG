@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+    <name>solar-impulse-callsign</name>
+    <!-- Changement mineur pour afficher "Solar Impulse" comme défaut -->
+    <text>
+        <label>Solar Impulse HB-SIB</label>
+    </text>
+</PropertyList>

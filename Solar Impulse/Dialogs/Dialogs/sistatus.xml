@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+    <name>solar-impulse-status</name>
+    <!-- Ajout d'indicateurs spécifiques -->
+    <group>
+        <text>
+            <label>Battery: %{/systems/battery/level}%</label>
+        </text>
+        <text>
+            <label>Solar Input: %{/systems/solar/power} W</label>
+        </text>
+    </group>
+</PropertyList>

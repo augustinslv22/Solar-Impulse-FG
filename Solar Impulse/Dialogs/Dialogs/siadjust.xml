@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+    <name>solar-impulse-adjust</name>
+    <layout>vbox</layout>
+    
+    <!-- Modifié pour des réglages plus précis adaptés aux vols lents -->
+    <slider>
+        <name>pitch</name>
+        <min>-0.5</min>  <!-- Réduit la plage pour plus de précision -->
+        <max>0.5</max>
+        <step>0.01</step> <!-- Pas plus fin -->
+    </slider>
+    
+    <!-- Ajout d'un contrôle spécifique pour les panneaux solaires -->
+    <group>
+        <text><label>Solar Panel Angle</label></text>
+        <slider>
+            <property>/systems/solar/panel-angle</property>
+            <min>0</min>
+            <max>90</max>
+        </slider>
+    </group>
+</PropertyList>

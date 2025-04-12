@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+    <name>solar-impulse-cam</name>
+    <!-- Optimisé pour les vues longues distances nécessaires pour l'envergure importante -->
+    <view>
+        <distance>150</distance> <!-- Distance accrue pour voir toute l'envergure -->
+    </view>
+</PropertyList>
