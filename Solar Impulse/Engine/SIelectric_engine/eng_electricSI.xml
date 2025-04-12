@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<!--
+  File:     IO320.xml
+  Author:   Selvame Augustin
+
+  Inputs:
+    name:           solar_motor
+    type:           electric
+    power:          11.0 kW(per motor)
+    augmented?      no
+    injected?       no
+-->
+
+<electric_engine name="solar_motor">
+    <maxpower unit ="KW">11.0</maxpower>
+    <maxhp>15</maxhp>
+    <idlerpm>                 50.0  </idlerpm>
+    <maxrpm>                  800.0  </maxrpm>
+    <maxthrottle>               1.0  </maxthrottle>
+    <minthrottle>               0.1  </minthrottle>
+</electric_engine>

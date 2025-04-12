@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+  <name>Solar Impulse 2 Advanced Panel</name>
+  <background>Aircraft/SolarImpulse/Panels/panel-bg.rgb</background>
+  <w>1024</w>
+  <h>768</h>
+  <view-height>5</view-height>
+
+  <instruments>
+    <!-- Energy Management Cluster -->
+    <instrument include="Aircraft/SolarImpulse/Instruments/solar-system.xml">
+      <name>SolarSystem</name>
+      <x>50</x>
+      <y>650</y>
+      <w>300</w>
+      <h>300</h>
+    </instrument>
+
+    <instrument include="Aircraft/SolarImpulse/Instruments/battery-matrix.xml">
+      <name>BatteryMatrix</name>
+      <x>400</x>
+      <y>650</y>
+      <w>300</w>
+      <h>300</h>
+    </instrument>
+
+    <!-- Flight Data -->
+    <instrument include="Aircraft/SolarImpulse/Instruments/asi-ultralight.xml">
+      <name>Airspeed</name>
+      <x>50</x>
+      <y>350</y>
+      <w>200</w>
+      <h>200</h>
+    </instrument>
+
+    <instrument include="Aircraft/SolarImpulse/Instruments/alt-ultralight.xml">
+      <name>Altimeter</name>
+      <x>300</x>
+      <y>350</y>
+      <w>200</w>
+      <h>200</h>
+    </instrument>
+
+    <!-- System Monitoring -->
+    <instrument include="Aircraft/SolarImpulse/Instruments/energy-flow.xml">
+      <name>EnergyFlow</name>
+      <x>550</x>
+      <y>350</y>
+      <w>300</w>
+      <h>200</h>
+    </instrument>
+
+    <!-- Solar Array Display -->
+    <instrument include="Aircraft/SolarImpulse/Instruments/solar-array.xml">
+      <name>SolarArray</name>
+      <x>850</x>
+      <y>350</y>
+      <w>300</w>
+      <h>200</h>
+    </instrument>
+
+    <!-- Multipanel and Saitek Switch Compatibility -->
+    <!-- Add any additional instruments or configurations needed for these devices here -->
+
+  </instruments>
+</PropertyList>
