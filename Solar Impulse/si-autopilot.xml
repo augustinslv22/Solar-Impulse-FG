@@ -1,0 +1,151 @@
+<PropertyList>
+<!-- Logic for Solar Impulse 2 Autopilot -->
+<logic>
+  <!-- Roll channel active -->
+  <input>
+    <or>
+      <equals>
+        <property>/autopilot/locks/heading</property>
+        <value>wing-leveler</value>
+      </equals>
+      <equals>
+        <property>/autopilot/locks/heading</property>
+        <value>dg-heading-hold</value>
+      </equals>
+      <equals>
+        <property>/autopilot/locks/heading</property>
+        <value>true-heading-hold</value>
+      </equals>
+      <equals>
+        <property>/autopilot/locks/heading</property>
+        <value>nav1-hold</value>
+      </equals>
+    </or>
+  </input>
+  <output>/autopilot/internal/roll-active</output>
+</logic>
+
+<logic>
+  <!-- Basic pitch hold active -->
+  <input>
+    <equals>
+      <property>/autopilot/locks/altitude</property>
+      <value>pitch-hold</value>
+    </equals>
+  </input>
+  <output>/autopilot/internal/pitch-hold-active</output>
+</logic>
+
+<logic>
+  <!-- Throttle channel active -->
+  <input>
+    <equals>
+      <property>/autopilot/locks/speed</property>
+      <value>speed-with-throttle</value>
+    </equals>
+  </input>
+  <output>/autopilot/internal/throttle-active</output>
+</logic>
+
+<filter>
+  <!-- Heading/Nav Error computation -->
+  <name>Heading/Nav Error Deg</name>
+  <type>gain</type>
+  <gain>1.0</gain>
+  <input>
+    <condition>
+      <equals>
+        <property>/autopilot/locks/heading</property>
+        <value>nav1-hold</value>
+      </equals>
+    </condition>
+    <property>/instrumentation/nav[0]/radials/target-auto-hdg-deg</property>
+    <offset>
+      <property>/orientation/heading-deg</property>
+      <scale>-1.0</scale>
+    </offset>
+  </input>
+  <output>/autopilot/internal/heading-error-deg</output>
+  <period>
+    <min>-180</min>
+    <max>180</max>
+  </period>
+</filter>
+
+<filter>
+  <!-- Throttle control for Solar Impulse 2 -->
+  <name>Throttle Control</name>
+  <type>gain</type>
+  <gain>1.0</gain>
+  <input>
+    <expression>
+      <div>
+        <property>/autopilot/settings/target-speed-kt</property>
+        <value>1.0</value>
+      </div>
+    </expression>
+  </input>
+  <output>/controls/engines/engine[0]/throttle</output>
+</filter>
+
+<filter>
+  <!-- Pitch control for Solar Impulse 2 -->
+  <name>Pitch Controller</name>
+  <type>gain</type>
+  <gain>1.0</gain>
+  <enable>
+    <condition>
+      <property>/autopilot/internal/pitch-hold-active</property>
+    </condition>
+  </enable>
+  <input>/autopilot/settings/target-pitch-deg</input>
+  <output>/autopilot/internal/target-pitch-deg</output>
+</filter>
+
+<filter>
+  <!-- Aileron control for Solar Impulse 2 -->
+  <name>Aileron Controller</name>
+  <type>noise-spike</type>
+  <feedback-if-disabled>true</feedback-if-disabled>
+  <initialize-to>output</initialize-to>
+  <enable>
+    <condition>
+      <property>/autopilot/internal/roll-active</property>
+    </condition>
+  </enable>
+  <input>
+    <expression>
+      <div>
+        <property>/autopilot/internal/target-roll-deg</property>
+        <value>90</value>
+      </div>
+    </expression>
+  </input>
+  <output>/controls/flight/aileron</output>
+  <max-rate-of-change>1.2</max-rate-of-change>
+</filter>
+
+<filter>
+  <!-- Elevator control for Solar Impulse 2 -->
+  <name>Elevator Controller</name>
+  <type>noise-spike</type>
+  <feedback-if-disabled>true</feedback-if-disabled>
+  <initialize-to>output</initialize-to>
+  <enable>
+    <condition>
+      <property>/autopilot/internal/pitch-active</property>
+    </condition>
+  </enable>
+  <input>
+    <expression>
+      <div>
+        <property>/autopilot/internal/target-pitch-deg</property>
+        <value>-90</value>
+      </div>
+    </expression>
+  </input>
+  <output>/controls/flight/elevator</output>
+  <max-rate-of-change>1.2</max-rate-of-change>
+</filter>
+
+</PropertyList>
