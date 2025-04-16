@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<PropertyList>
+    <path>solar-impulse.ac</path>  <!-- Modèle 3D principal -->
+
+    <!-- Animation des panneaux solaires -->
+    <animation>
+        <type>rotate</type>
+        <object-name>solar-panels</object-name>
+        <property>/systems/solar/panel-angle</property>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.5</z-m>
+        </center>
+    </animation>
+
+    <!-- Lumières de navigation écoénergétiques -->
+    <model>
+        <name>Port nav</name>
+        <path>solar-impulse-pointlight.xml</path>
+        <overlay>
+            <params>
+                <name>SolarImpulse port nav</name>
+                <power-source>/controls/lighting/nav-lights</power-source>
+                <r>0.1</r>  <!-- Réduit pour économie d'énergie -->
+                <g>0.8</g>
+                <b>0.1</b>
+            </params>
+        </overlay>
+        <offsets>
+            <x-m>-30.0</x-m>  <!-- Position sur l'aile gauche -->
+            <y-m>-15.0</y-m>
+            <z-m>2.0</z-m>
+        </offsets>
+    </model>
+
+    <!-- Projecteurs LED économes -->
+    <model>
+        <name>Landing light</name>
+        <path>solar-impulse-spotlight.xml</path>
+        <overlay>
+            <params>
+                <name>SolarImpulse landing</name>
+                <power-source>/controls/lighting/landing-lights</power-source>
+                <heading-deg>-10</heading-deg>
+            </params>
+        </overlay>
+        <offsets>
+            <x-m>10.0</x-m>  <!-- Position avant -->
+            <y-m>0</y-m>
+            <z-m>-1.0</z-m>
+        </offsets>
+    </model>
+</PropertyList>

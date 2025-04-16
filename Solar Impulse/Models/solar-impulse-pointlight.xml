@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <params>
+    <power-source>/controls/lighting/nav-lights</power-source>
+    <name>SolarLight</name>
+    <r>0.1</r>  <!-- Vert économe -->
+    <g>0.8</g>
+    <b>0.1</r>
+  </params>
+
+  <light>
+    <type>point</type>
+    <attenuation>
+      <c>1.0</c>
+      <l>0.5</l>  <!-- Atténuation plus forte -->
+      <q>0.5</q>
+    </attenuation>
+    <range-m>20</range-m>  <!-- Portée réduite -->
+    <power-w>5</power-w>  <!-- Consommation en watts -->
+  </light>
+</PropertyList>
